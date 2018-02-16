@@ -9,26 +9,31 @@ namespace WordCounter.Tests
   [TestClass]
   public class WordCounterTest
   {
+    // [TestMethod]
+    // public void UserInputsAWord_AWordEmptyString_Equals_False()
+    // {
+    //   Console.WriteLine("Please give me a word: ");
+    //   string aString = Console.ReadLine();
+    //   Assert.AreEqual(false, (aString=="")); // should pass
+    // }
+    //
     [TestMethod]
-    public void UserInputsAWord_AWordEmptyString_Equals_False()
+    public void UserInputsASentence_ASentenceEmptyString_Equals_False()
     {
-      Console.WriteLine("Please give me a word: ");
+      Console.WriteLine("Please give me a string of words: ");
       string aString = Console.ReadLine();
       Assert.AreEqual(false, (aString=="")); // should pass
     }
-    // * Take input of a key word from the User via REPL, output it to Console. If the string is not empty it should pass the test.
-    //   - EXPECTED INPUT: "Apple"
-    //   - EXPECTED OUTPUT: "Apple"
-    //
-    // * Take input of a string from the User via REPL, output it to Console. If the string is not empty it should pass the test.
-    //   - EXPECTED INPUT: "Apples are a tasty fruit."
-    //   - EXPECTED OUTPUT: "Apples are a tasty fruit."
-    //
-    // * Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
-    //   (This will be done by running through the sentence a character at a time and writing anything that isn't punctuation to a new string.). To test if it succeeded a string with punctuation should be input and then check the new string to see if it contains sample punctuation.
-    //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-    //   - EXPECTED OUTPUT: "Apples I hear are a tasty fruit"
-    //
+
+    // [TestMethod]
+    // public void ProgramRemovesPunctuationFromInputSentence_ASentenceContainsAPeriod_Equals_False()
+    // {
+    //   // * Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
+    //   Console.WriteLine("Please give me a string of words: ");
+    //   string aString = Console.ReadLine();
+    //   Assert.AreEqual(false, (aString.Contains("."))); // should fail
+    // }
+
     // * Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
     //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
     //   - EXPECTED OUTPUT:
