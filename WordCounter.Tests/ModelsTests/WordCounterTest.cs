@@ -136,67 +136,30 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (repeatCount <= 0 == true));
     // }
 
+    // [TestMethod]
+    // public void UserInputsAWord_AWordEmptyString_Equals_False()
+    // // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
+    // //   - NO INPUT OR OUTPUT
+    // {
+    //   RepeatCounter Count = new RepeatCounter("Apples", "I hear apples are pretty nice.");
+    //   Assert.IsNotNull(Count); // should pass
+    // }
+
     [TestMethod]
-    public void UserInputsAWord_AWordEmptyString_Equals_False()
-    // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
-    //   - NO INPUT OR OUTPUT
+    public void ObjectStripsPunctuation_NoSpacesInString_Equals_True()
     {
-      RepeatCounter Count = new RepeatCounter("Apples", "I hear apples are pretty nice.");
-      Assert.IsNotNull(Count); // should pass
+    string x = RepeatCounter.ValidateSentence("Apples, I say, are a tasty fruit.");
+    // * Add a method to strip punctuation from a given sentence and return it in UPPERCASE.
+    Console.WriteLine("The result is " + x);
+    Assert.AreEqual(true, (x.Contains(" ") == true));
     }
 
 
-    //
-    // * Add Getters, and Setters as needed. Test them by getting and setting vars and passing them back and forth.
-    //   - NO INPUT OR OUTPUT
-    //
-    // * Add a Method to accept a key word from the user. If the string is not empty, they have given a keyword.
-    //   - PROMPT: "Please enter a keyword."
-    //   - EXPECTED SAMPLE INPUT: "Apples"
-    //   - EXPECTED OUTPUT: "You have input Apples as your keyword."
-    //
-    // * Add a Method to accept a string of words from the user. If the string is not empty, they have given a string.
-    //   - PROMPT: "Please enter a series of words to check for your keyword."
-    //   - EXPECTED SAMPLE INPUT: "Apples are a tasty fruit."
-    //   - EXPECTED OUTPUT: "You have input 'Apples are a tasty fruit' as your word string."
-    //
-    // * Add a method to strip punctuation from a given sentence and return it in UPPERCASE.
-    //   - EXPECTED SAMPLE INPUT: "Apples, I say, are a tasty fruit."
-    //   - EXPECTED SAMPLE RETURN: "APPLES I SAY ARE A TASTY FRUIT"
-    //
     // * Add the Method that counts the occurrences of the key word in the sentence (based on the REPL logic) and returns the number of occurrences.
     //   - EXPECTED INPUT: "Apples"
     //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
     //   - EXPECTED OUTPUT: 3.
-    //
-    // * Create a RepeatCounter instance in the HomeController. (Not necessary but useful to use an instance) ?????
-    //
-    // * Create a View called Index.cshtml as a title screen.
-    //
-    // * Test the View Controller to make sure the View() Index works.
-    //
-    // * Get a key word from the user via a form on Index.cshtml and output it to the Console.
-    //   - EXPECTED FORM INPUT: "Apples"
-    //   - EXPECTED OUTPUT: "Apples"
-    //
-    // * Get a sentence from the user via a form on Index.cshtml and output it to the Console.
-    //   - EXPECTED FORM INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-    //   - EXPECTED OUTPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-    //
-    // * Test the View Controller to make sure the View() Index works when passing its model from the form to the page.
-    //
-    // * Get a keyword string from the User and pass it to RepeatCounter
-    //   - EXPECTED FORM INPUT: "Apples"
-    //   - NO OUTPUT
-    //
-    // * Get a string of words from the User and pass it to RepeatCounter
-    //   - EXPECTED FORM INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-    //   - NO OUTPUT
-    //
-    // * Run the Counter Method on the inputted strings and output to the Index View.
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-    //   - EXPECTED OUTPUT: "Apples occurred 3 time(s) in the sentence you provided."
 
+    // * Create a RepeatCounter instance in the HomeController. (Not necessary but useful to use an instance) ?????
   }
 }
