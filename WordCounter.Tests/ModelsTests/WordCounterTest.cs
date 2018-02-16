@@ -107,64 +107,35 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (words.Length <= 0 == true));
     // }
 
-    [TestMethod]
-    public void ProgramComparesWords_NoMatchesCounterIs0_Equals_true()
-    {
-      // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-      //   TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
-      Console.WriteLine("Please give me a keyword: ");
-      string keyword = Console.ReadLine().ToUpper();
-      Console.WriteLine("Please give me a string of words: ");
-      string aString = Console.ReadLine().ToUpper();
-      StringBuilder newString = new StringBuilder();
-      for (var i = 0; i < aString.Length-1; i++)
-      {
-        if(! char.IsPunctuation(aString[i])){
-          newString.Append(aString[i]);
-        }
-      }
-      string [] words = newString.ToString().Split(' ');
-      int repeatCount = 0;
-      for (var i=0; i < words.Length; i++)
-      {
-        if (words[i].Equals(keyword))
-        {
-            repeatCount++;
-        }
-      }
-      Console.WriteLine("repeatCount is: " + repeatCount++);
-      Assert.AreEqual(false, (repeatCount <= 0 == true));
-    }
+    // [TestMethod]
+    // public void ProgramComparesWords_NoMatchesCounterIs0_Equals_true()
+    // {
+    //   // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
+    //   //   TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
+    //   Console.WriteLine("Please give me a keyword: ");
+    //   string keyword = Console.ReadLine().ToUpper();
+    //   Console.WriteLine("Please give me a string of words: ");
+    //   string aString = Console.ReadLine().ToUpper();
+    //   StringBuilder newString = new StringBuilder();
+    //   for (var i = 0; i < aString.Length-1; i++)
+    //   {
+    //     if(! char.IsPunctuation(aString[i])){
+    //       newString.Append(aString[i]);
+    //     }
+    //   }
+    //   string [] words = newString.ToString().Split(' ');
+    //   int repeatCount = 0;
+    //   for (var i=0; i < words.Length; i++)
+    //   {
+    //     if (words[i].Equals(keyword))
+    //     {
+    //         repeatCount++;
+    //     }
+    //   }
+    //   Console.WriteLine(keyword + " occurred  " + repeatCount + " time(s)");
+    //   Assert.AreEqual(false, (repeatCount <= 0 == true));
+    // }
 
-    // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-    //   TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
-    //   - EXPECTED INPUT: "Bananas"
-    //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-    //   - EXPECTED OUTPUT: 0.
-    //
-    // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-    //   TESTING: The repeat counter should be > 0 if a sentence of just the keyword repeated 5, or 3 times, or 12 times, etc. is entered. Output the counter.:
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples APPLEs Apples APPLES apples."
-    //   - EXPECTED OUTPUT: 5.
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples, APPLES, apples."
-    //   - EXPECTED OUTPUT: 3.
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples; APPLEs: Apples APPLES apples Apples, APPLES, apples Apples, APPLES, apples ApPlEs!"
-    //   - EXPECTED OUTPUT: 12.
-    //
-    // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-    //   - TESTING: If a string that includes the keyword a few random times where the counter should be equal to the number of keywords I enter to pass.:
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-    //   - EXPECTED OUTPUT: 3.
-    //
-    // * Tell the user with a sentence how many times the word has occurred in the sentence.
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples are a tasty fruit."
-    //   - EXPECTED OUTPUT: "Apples occurred 1 time(s) in the sentence you provided."
-    //
     // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
     //   - NO INPUT OR OUTPUT
     //
