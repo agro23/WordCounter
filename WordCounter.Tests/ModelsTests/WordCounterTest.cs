@@ -17,13 +17,13 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (aString=="")); // should pass
     // }
     //
-    [TestMethod]
-    public void UserInputsASentence_ASentenceEmptyString_Equals_False()
-    {
-      Console.WriteLine("Please give me a string of words: ");
-      string aString = Console.ReadLine();
-      Assert.AreEqual(false, (aString=="")); // should pass
-    }
+    // [TestMethod]
+    // public void UserInputsASentence_ASentenceEmptyString_Equals_False()
+    // {
+    //   Console.WriteLine("Please give me a string of words: ");
+    //   string aString = Console.ReadLine();
+    //   Assert.AreEqual(false, (aString=="")); // should pass
+    // }
 
     // [TestMethod]
     // public void ProgramRemovesPunctuationFromInputSentence_ASentenceContainsAPeriod_Equals_False()
@@ -33,6 +33,27 @@ namespace WordCounter.Tests
     //   string aString = Console.ReadLine();
     //   Assert.AreEqual(false, (aString.Contains("."))); // should fail
     // }
+
+    [TestMethod]
+    public void ProgramChecksPunctuationInInputSentence_ASentenceContainsNoPunctuation_Equals_true()
+    {
+      // * Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
+      Console.WriteLine("Please give me a string of words: ");
+      string aString = Console.ReadLine();
+      string[] punct = {".", ",", "!", "?", ";", ":", "-", "'", "\""};
+      int i = 0;
+      bool retval = false;
+      while (i < punct.Length)
+      {
+        if (aString.Contains(punct[i]))
+        {
+            retval = true;
+            break;
+        }
+        i++;
+      }
+      Assert.AreEqual(false, retval);
+    }
 
     // * Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
     //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
