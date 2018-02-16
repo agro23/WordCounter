@@ -86,12 +86,36 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (retval==true));
     // }
 
+    // [TestMethod]
+    // public void ProgramSplitsAtSpace_ASentenceIsAnArrayNow_Equals_true()
+    // {
+    //   // * Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
+    //   Console.WriteLine("Please give me a string of words: ");
+    //   string aString = Console.ReadLine();
+    //   StringBuilder newString = new StringBuilder();
+    //   for (var i = 0; i < aString.Length-1; i++)
+    //   {
+    //     if(! char.IsPunctuation(aString[i])){
+    //       newString.Append(aString[i]);
+    //     }
+    //   }
+    //   string [] words = newString.ToString().Split(' ');
+    //   for (var i=0; i < words.Length; i++)
+    //   {
+    //     Console.WriteLine(words[i]);
+    //   }
+    //   Assert.AreEqual(false, (words.Length <= 0 == true));
+    // }
+
     [TestMethod]
-    public void ProgramSplitsAtSpace_ASentenceIsAnArrayNow_Equals_true()
+    public void ProgramComparesWords_NoMatchesCounterIs0_Equals_true()
     {
-      // * Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
+      // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
+      //   TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
+      Console.WriteLine("Please give me a keyword: ");
+      string keyword = Console.ReadLine().ToUpper();
       Console.WriteLine("Please give me a string of words: ");
-      string aString = Console.ReadLine();
+      string aString = Console.ReadLine().ToUpper();
       StringBuilder newString = new StringBuilder();
       for (var i = 0; i < aString.Length-1; i++)
       {
@@ -100,11 +124,16 @@ namespace WordCounter.Tests
         }
       }
       string [] words = newString.ToString().Split(' ');
+      int repeatCount = 0;
       for (var i=0; i < words.Length; i++)
       {
-        Console.WriteLine(words[i]);
+        if (words[i].Equals(keyword))
+        {
+            repeatCount++;
+        }
       }
-      Assert.AreEqual(false, (words.Length <= 0 == true));
+      Console.WriteLine("repeatCount is: " + repeatCount++);
+      Assert.AreEqual(false, (repeatCount <= 0 == true));
     }
 
     // * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
