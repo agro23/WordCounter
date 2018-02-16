@@ -3,6 +3,7 @@ using WordCounter;
 using WordCounter.Models;
 using System.Collections.Generic;
 using System;
+using System.Text;
 
 namespace WordCounter.Tests
 {
@@ -34,25 +35,55 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (aString.Contains("."))); // should fail
     // }
 
+    // [TestMethod]
+    // public void ProgramChecksPunctuationInInputSentence_ASentenceContainsNoPunctuation_Equals_true()
+    // {
+    //   // * Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
+    //   Console.WriteLine("Please give me a string of words: ");
+    //   string aString = Console.ReadLine();
+    //   string[] punct = {".", ",", "!", "?", ";", ":", "-", "'", "\""};
+    //   int i = 0;
+    //   bool retval = false;
+    //   while (i < punct.Length)
+    //   {
+    //     if (aString.Contains(punct[i]))
+    //     {
+    //         retval = true;
+    //         break;
+    //     }
+    //     i++;
+    //   }
+    //   Assert.AreEqual(false, retval);
+    // }
+
     [TestMethod]
-    public void ProgramChecksPunctuationInInputSentence_ASentenceContainsNoPunctuation_Equals_true()
+    public void ProgramRemovesPunctuation_ASentenceContainsNoPunctuation_Equals_true()
     {
       // * Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
       Console.WriteLine("Please give me a string of words: ");
       string aString = Console.ReadLine();
-      string[] punct = {".", ",", "!", "?", ";", ":", "-", "'", "\""};
-      int i = 0;
-      bool retval = false;
-      while (i < punct.Length)
+      StringBuilder newString = new StringBuilder();
+      for (var i = 0; i < aString.Length-1; i++)
       {
-        if (aString.Contains(punct[i]))
+        if(! char.IsPunctuation(aString[i])){
+          newString.Append(aString[i]);
+        }
+      }
+
+      Console.WriteLine("New string is: " + newString.ToString());
+      bool retval = false;
+      int k = 0;
+      string[] punct = {".", ",", "!", "?", ";", ":", "-", "'", "\""};
+      while (k < punct.Length)
+      {
+        if (newString.ToString().Contains(punct[k]))
         {
             retval = true;
             break;
         }
-        i++;
+        k++;
       }
-      Assert.AreEqual(false, retval);
+      Assert.AreEqual(false, (retval==true));
     }
 
     // * Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
