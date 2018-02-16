@@ -136,8 +136,16 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (repeatCount <= 0 == true));
     // }
 
+    [TestMethod]
+    public void UserInputsAWord_AWordEmptyString_Equals_False()
     // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
     //   - NO INPUT OR OUTPUT
+    {
+      RepeatCounter Count = new RepeatCounter("Apples", "I hear apples are pretty nice.");
+      Assert.IsNotNull(Count); // should pass
+    }
+
+
     //
     // * Add Getters, and Setters as needed. Test them by getting and setting vars and passing them back and forth.
     //   - NO INPUT OR OUTPUT

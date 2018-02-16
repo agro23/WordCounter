@@ -27,29 +27,33 @@ Do not use regular expressions in your logic.
 
 ## Specifications
 
-* Take input of a key word from the User via REPL, output it to Console. If the string is not empty it should pass the test.
+* Take input of a key word from the User via Console, output it to Console. If the string is not empty it should pass the test.
   - EXPECTED INPUT: "Apple"
   - EXPECTED OUTPUT: "Apple"
 
-* Take input of a string from the User via REPL, output it to Console. If the string is not empty it should pass the test.
+* Take input of a string from the User via Console, output it to Console. If the string is not empty it should pass the test.
   - EXPECTED INPUT: "Apples are a tasty fruit."
   - EXPECTED OUTPUT: "Apples are a tasty fruit."
 
+* Check input sentence for punctuation. True if it has some false if it doesn't.
+  - EXPECTED INPUT: "Apples are a tasty fruit."
+  - EXPECTED OUTPUT: TRUE
+
 * Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
   (This will be done by running through the sentence a character at a time and writing anything that isn't punctuation to a new string.). To test if it succeeded a string with punctuation should be input and then check the new string to see if it contains sample punctuation.
-- EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-- EXPECTED OUTPUT: "Apples I hear are a tasty fruit"
+  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
+  - EXPECTED OUTPUT: "Apples I hear are a tasty fruit"
 
 * Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
-- EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-- EXPECTED OUTPUT:
-    - Apples
-    - I
-    - hear
-    - are
-    - a
-    - tasty
-    - fruit
+  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
+  - EXPECTED OUTPUT:
+      - Apples
+      - I
+      - hear
+      - are
+      - a
+      - tasty
+      - fruit
 
 * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
   TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
@@ -94,7 +98,7 @@ Do not use regular expressions in your logic.
 * Add a Method to accept a string of words from the user. If the string is not empty, they have given a string.
   - PROMPT: "Please enter a series of words to check for your keyword."
   - EXPECTED SAMPLE INPUT: "Apples are a tasty fruit."
-  - EXPECTED OUTPUT: "You have input 'Apples are a tasty fruit' as your word string."
+  - EXPECTED OUTPUT: "You have input 'Apples are a tasty fruit' as your word string." <--
 
 * Add a method to strip punctuation from a given sentence and return it in UPPERCASE.
   - EXPECTED SAMPLE INPUT: "Apples, I say, are a tasty fruit."

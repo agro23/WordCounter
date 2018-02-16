@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+    <div class="container well">
+      <h1>Word Counter</h1>
+      <div class="row">
+        <form class="form" action="/" method="post">
+          <div class="row">
+            <input type="text" name="Word" id="word" placeholder="Enter a word to find">
+            <input type="text" name="Sentence" id="sentence" placeholder="Enter your sentence">
+          </div>
+          <div class="row">
+            <button type="submit" class="btn btn-success" name="button">PLAY!</button>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        @if(@Model["msg"].Length > 0)
+        {
+          <h3>@Model["msg"]</h3>
+        }
+      </div>
+    </div>
+      <!-- <h3>@Model["msg"]</h3> -->
+      <!-- <h2>RESULTS OF THE GAME</h2>
+    </div> -->

@@ -1,0 +1,64 @@
+.jumbotron {
+  margin-bottom: 0px;
+  background-image: url(~/img/Silver-Brick_Pattern.jpg);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  text-shadow: black 0.3em 0.3em 0.3em;
+}
+
+.container {
+  margin-top: 2em;
+  padding: 3em;
+  background: linear-gradient(silver, white);
+}
+
+.well {
+  background: linear-gradient(gray, white);
+}
+
+.row {
+  padding: .5em;
+}
+
+.styled-p{
+  margin:0;
+  padding: .25em;
+  font-size: 1.33em;
+}
+
+#results {
+  display: none;
+}
+
+
+/* .contacts-name{
+  font-size: 1.5em;
+}
+
+.some-space {
+  margin-bottom: 1em;
+}
+
+.whiteSquare{
+  background-color: white;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+}
+
+.redSquare{
+  background-color: red;
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+} */
+
+/* img {
+  height: 80px;
+  z-index: 10;
+  top: 10px;
+  left: 10px;
+
+} */
