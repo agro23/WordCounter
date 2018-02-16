@@ -52,10 +52,10 @@ Do not use regular expressions in your logic.
     - fruit
 
 * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-- TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
-- EXPECTED INPUT: "Bananas"
-- EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-- EXPECTED OUTPUT: 0.
+  TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
+  - EXPECTED INPUT: "Bananas"
+  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
+  - EXPECTED OUTPUT: 0.
 
 * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
 - TESTING: The repeat counter should be > 0 if a sentence of just the keyword repeated 5, or 3 times, or 12 times, etc. is entered. Output the counter.:
