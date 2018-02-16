@@ -136,29 +136,34 @@ namespace WordCounter.Tests
     //   Assert.AreEqual(false, (repeatCount <= 0 == true));
     // }
 
-    // [TestMethod]
-    // public void UserInputsAWord_AWordEmptyString_Equals_False()
-    // // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
-    // //   - NO INPUT OR OUTPUT
-    // {
-    //   RepeatCounter Count = new RepeatCounter("Apples", "I hear apples are pretty nice.");
-    //   Assert.IsNotNull(Count); // should pass
-    // }
-
     [TestMethod]
-    public void ObjectStripsPunctuation_NoSpacesInString_Equals_True()
+    public void UserInputsAWord_AWordEmptyString_Equals_False()
+    // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
+    //   - NO INPUT OR OUTPUT
     {
-    string x = RepeatCounter.ValidateSentence("Apples, I say, are a tasty fruit.");
-    // * Add a method to strip punctuation from a given sentence and return it in UPPERCASE.
-    Console.WriteLine("The result is " + x);
-    Assert.AreEqual(true, (x.Contains(" ") == true));
+      RepeatCounter Count = new RepeatCounter("Apples", "I hear apples are pretty nice.");
+      Assert.IsNotNull(Count); // should pass
     }
 
-
-    // * Add the Method that counts the occurrences of the key word in the sentence (based on the REPL logic) and returns the number of occurrences.
-    //   - EXPECTED INPUT: "Apples"
-    //   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-    //   - EXPECTED OUTPUT: 3.
+    // [TestMethod]
+    // public void ObjectStripsPunctuation_NoSpacesInString_Equals_True()
+    // {
+    // // string x = RepeatCounter.ValidateSentence("Apples, I say, are a tasty fruit.");
+    // string x = RepeatCounter.ValidateSentence("Apples are a tasty fruit. I like apples.");
+    // // * Add a method to strip punctuation from a given sentence and return it in UPPERCASE.
+    // Console.WriteLine("The result is " + x);
+    // Assert.AreEqual(true, (x.Contains(" ") == true));
+    // }
+    //
+    // [TestMethod]
+    // public void ObjectCountsKeyword_RepeatsCounted_Equals_True()
+    // {
+    // int x = RepeatCounter.Counter("Apples", "Apples, apples, ApPlEs, appLES, APPLES. apples.");
+    // // int x = RepeatCounter.Counter("Apples", "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples.");
+    // // * Add the Method that counts the occurrences of the key word in the sentence and returns the number of occurrences.
+    // Console.WriteLine("The resulting count is " + x);
+    // Assert.AreEqual(true, (x > 0 == true));
+    // }
 
     // * Create a RepeatCounter instance in the HomeController. (Not necessary but useful to use an instance) ?????
   }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using System;
 
 namespace WordCounter.Models
@@ -33,23 +34,35 @@ namespace WordCounter.Models
       _sentence = sentence;
     }
 
-    // public string ValidateSentence(string sentence)
-    // {
-    //   // strip the sentence string of punctuation and copy it into new string
-    //   // turn it all to upper case
-    //   // sentence = newSentence;
-    //   return sentence;
-    // }
-    //
-    // public static int Counter(string keyword, string sentence)
-    // {
-    //   // ValidateSentence(sentence);
-    //   // split the new string at " "
-    //   // go through the resulting string array and count the keyword matches
-    //   // return the number of matches
-    //   int times = 1;
-    //   return times;
-    // }
+    public static string ValidateSentence(string sentence)
+    {
+      StringBuilder newString = new StringBuilder();
+      for (var i = 0; i < sentence.Length-1; i++)
+      {
+        if(! char.IsPunctuation(sentence[i]))
+        {
+        newString.Append(sentence[i]);
+        }
+      }
+      return newString.ToString();
+    }
 
+    public static int Counter(string keyword, string sentence)
+    {
+      Console.WriteLine("It came in as: " + sentence);
+      sentence = ValidateSentence(sentence);
+      Console.WriteLine("Now it's: " + sentence);
+      string [] words = sentence.Split(' ');
+      int repeatCount = 0;
+      for (var i=0; i < words.Length; i++)
+      {
+        if (words[i].ToUpper().Equals(keyword.ToUpper()))
+        {
+          repeatCount++;
+        }
+      }
+      Console.WriteLine(keyword + " occurred " + repeatCount + " time(s)");
+      return repeatCount;
+    }
   }
 }
