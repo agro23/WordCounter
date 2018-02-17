@@ -9,6 +9,7 @@ A program for a User to enter a keyword and a string of words where the program 
 ## Rules
 
 Word Counter
+
 Your mission is to create a website in MVC that uses a method to return how frequently a word appears in a given string. The user should input both the word and the string of words to check. Check for full word matches only.
 
 Before writing any code, start by writing specs in English in a plain text file, just like we've been doing in class (listing them in the README is fine). Commit your English specs before beginning on your code.
@@ -39,8 +40,8 @@ Do not use regular expressions in your logic.
   - EXPECTED INPUT: "Apples are a tasty fruit."
   - EXPECTED OUTPUT: TRUE
 
-* Strip punctuation from the string and output the resulting punctuation-free to the Console. Punctuation should not effect the words to count.
-  (This will be done by running through the sentence a character at a time and writing anything that isn't punctuation to a new string.). To test if it succeeded a string with punctuation should be input and then check the new string to see if it contains sample punctuation.
+* Strip punctuation from the string and output the resulting punctuation-free string to the Console. Punctuation should not affect the words to count.
+  (This will be done by running through the sentence a character at a time and writing anything that isn't punctuation to a new string). To test if it succeeded a string with punctuation should be input and then check the new string to see if it contains sample punctuation.
   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
   - EXPECTED OUTPUT: "Apples I hear are a tasty fruit"
 
@@ -74,12 +75,12 @@ Do not use regular expressions in your logic.
   - EXPECTED OUTPUT: 12.
 
 * Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-  - TESTING: If a string that includes the keyword a few random times where the counter should be equal to the number of keywords I enter to pass.:
+  TESTING: If a string that includes the keyword a few random times is entered the counter should be equal to the number of times the keywords is found to pass.:
   - EXPECTED INPUT: "Apples"
   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
   - EXPECTED OUTPUT: 3.
 
-* Tell the user with a sentence how many times the word has occurred in the sentence.
+* Tell the user with in a formatted sentence how many times their keyword has occurred in their sentence.
   - EXPECTED INPUT: "Apples"
   - EXPECTED INPUT: "Apples are a tasty fruit."
   - EXPECTED OUTPUT: "Apples occurred 1 time(s) in the sentence you provided."
@@ -100,7 +101,7 @@ Do not use regular expressions in your logic.
   - EXPECTED SAMPLE INPUT: "Apples, I say, are a tasty fruit."
   - EXPECTED SAMPLE RETURN: "APPLES I SAY ARE A TASTY FRUIT"
 
-* Add the Method that counts the occurrences of the key word in the sentence (based on the REPL logic) and returns the number of occurrences.
+* Add the Method that counts the occurrences of the keyword in the sentence (based on the REPL logic) and returns the number of occurrences.
   - EXPECTED INPUT: "Apples"
   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
   - EXPECTED OUTPUT: 3.
@@ -111,7 +112,7 @@ Do not use regular expressions in your logic.
 
 * Test the View Controller to make sure the View() Index works.
 
-* Get a key word from the user via a form on Index.cshtml and output it to the Console.
+* Get a keyword from the user via a form on Index.cshtml and output it to the Console.
   - EXPECTED FORM INPUT: "Apples"
   - EXPECTED OUTPUT: "Apples"
 
@@ -129,7 +130,7 @@ Do not use regular expressions in your logic.
   - EXPECTED FORM INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
   - NO OUTPUT
 
-* Run the Counter Method on the inputted strings and output to the Index View.
+* Run the Counter Method on the inputted strings and output to the Index() View.
   - EXPECTED INPUT: "Apples"
   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
   - EXPECTED OUTPUT: "Apples occurred 3 time(s) in the sentence you provided."
@@ -140,7 +141,7 @@ Do not use regular expressions in your logic.
 
 ## Methodology
 
-* My approach is to take the word and the string of words and strip it all of punctuation. Then I convert both to uppercase and loop through the string of words comparing it to the keyword where I increment a counter if there's a match. Then I show the match count to the User.
+* My approach is to take the word and the string of words and strip it of all punctuation. Then I convert both to uppercase and loop through the string of words comparing it to the keyword where I increment a counter if there's a match. Then I show the match count to the User.
 
 ## Setup/Installation Requirements
 
