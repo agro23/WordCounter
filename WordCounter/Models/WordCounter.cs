@@ -37,7 +37,7 @@ namespace WordCounter.Models
     public static string ValidateSentence(string sentence)
     {
       StringBuilder newString = new StringBuilder();
-      for (var i = 0; i < sentence.Length-1; i++)
+      for (var i = 0; i < sentence.Length; i++)
       {
         if(! char.IsPunctuation(sentence[i]))
         {
@@ -49,9 +49,7 @@ namespace WordCounter.Models
 
     public static int Counter(string keyword, string sentence)
     {
-      Console.WriteLine("It came in as: " + sentence);
       sentence = ValidateSentence(sentence);
-      Console.WriteLine("Now it's: " + sentence);
       string [] words = sentence.Split(' ');
       int repeatCount = 0;
       for (var i=0; i < words.Length; i++)
@@ -61,7 +59,6 @@ namespace WordCounter.Models
           repeatCount++;
         }
       }
-      Console.WriteLine(keyword + " occurred " + repeatCount + " time(s)");
       return repeatCount;
     }
   }

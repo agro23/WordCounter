@@ -117,7 +117,7 @@ Do not use regular expressions in your logic.
 
 * Get a sentence from the user via a form on Index.cshtml and output it to the Console.
   - EXPECTED FORM INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-  - EXPECTED OUTPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples." <--
+  - EXPECTED OUTPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
 
 * Test the View Controller to make sure the View() Index works when passing its model from the form to the page.
 
