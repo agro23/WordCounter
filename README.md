@@ -137,7 +137,7 @@ Do not use regular expressions in your logic.
 
 * Style the Index page.
 
-* Refactor code as needed.
+* Refactor code as needed. 
 
 ## Methodology
 

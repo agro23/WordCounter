@@ -117,7 +117,7 @@ namespace WordCounter.Tests
       Console.WriteLine("Please give me a string of words: ");
       string aString = Console.ReadLine().ToUpper();
       StringBuilder newString = new StringBuilder();
-      for (var i = 0; i < aString.Length-1; i++)
+      for (var i = 0; i < aString.Length; i++)
       {
         if(! char.IsPunctuation(aString[i])){
           newString.Append(aString[i]);
@@ -137,7 +137,7 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void UserInputsAWord_AWordEmptyString_Equals_False()
+    public void RepeatCounter_ObjectCreated_IsNotNull_Equals_True()
     // * Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
     //   - NO INPUT OR OUTPUT
     {
