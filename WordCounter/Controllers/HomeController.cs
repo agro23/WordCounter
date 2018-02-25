@@ -25,7 +25,7 @@ namespace WordCounter.Controllers
       string model ="";
       if ((! string.IsNullOrEmpty(keyword) ) && (! string.IsNullOrEmpty(sentence)) )
       {
-        model = "Your word '" + keyword + "' appeared in the sentence '" + sentence + "' " + RepeatCounter.Counter(keyword, RepeatCounter.ValidateSentence(sentence)) + " time(s).";
+        model = "Your word '" + keyword + "' appeared in the sentence '" + sentence + "' " + RepeatCounter.Counter(keyword, RepeatCounter.StripPunctuationFromSentence(sentence)) + " time(s).";
       }
       else
       {

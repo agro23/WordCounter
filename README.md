@@ -28,80 +28,34 @@ Do not use regular expressions in your logic.
 
 ## Specifications
 
-* Take input of a key word from the User via Console, output it to Console. If the string is not empty it should pass the test.
-  - EXPECTED INPUT: "Apple"
-  - EXPECTED OUTPUT: "Apple"
-
-* Take input of a string from the User via Console, output it to Console. If the string is not empty it should pass the test.
-  - EXPECTED INPUT: "Apples are a tasty fruit."
-  - EXPECTED OUTPUT: "Apples are a tasty fruit."
-
-* Check input sentence for punctuation. True if it has some false if it doesn't.
-  - EXPECTED INPUT: "Apples are a tasty fruit."
-  - EXPECTED OUTPUT: TRUE
-
-* Strip punctuation from the string and output the resulting punctuation-free string to the Console. Punctuation should not affect the words to count.
-  (This will be done by running through the sentence a character at a time and writing anything that isn't punctuation to a new string). To test if it succeeded a string with punctuation should be input and then check the new string to see if it contains sample punctuation.
-  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-  - EXPECTED OUTPUT: "Apples I hear are a tasty fruit"
-
-* Split the new word string at " " into an array of strings called "sentence" and output it to the Console. This is the array we will compare the key word to in order to count its occurrences. If the array is not empty and its words contain no spaces it will pass the test.
-  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-  - EXPECTED OUTPUT:
-      - Apples
-      - I
-      - hear
-      - are
-      - a
-      - tasty
-      - fruit
-
-* Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-  TESTING: The counter is 0 when a string with no matches to the keyword is entered. Output the counter.:
-  - EXPECTED INPUT: "Bananas"
-  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit."
-  - EXPECTED OUTPUT: 0.
-
-* Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-  TESTING: The repeat counter should be > 0 if a sentence of just the keyword repeated 5, or 3 times, or 12 times, etc. is entered. Output the counter.:
-  - EXPECTED INPUT: "Apples"
-  - EXPECTED INPUT: "Apples APPLEs Apples APPLES apples."
-  - EXPECTED OUTPUT: 5.
-  - EXPECTED INPUT: "Apples"
-  - EXPECTED INPUT: "Apples, APPLES, apples."
-  - EXPECTED OUTPUT: 3.
-  - EXPECTED INPUT: "Apples"
-  - EXPECTED INPUT: "Apples; APPLEs: Apples APPLES apples Apples, APPLES, apples Apples, APPLES, apples ApPlEs!"
-  - EXPECTED OUTPUT: 12.
-
-* Use a for loop ending at the length of the "sentence" array to run through it word by word. Increment a counter for every time that a word in the array matches the key word. NOTE: Both the Key and Sentence Word will be rendered to upper case during the comparison.
-  TESTING: If a string that includes the keyword a few random times is entered the counter should be equal to the number of times the keywords is found to pass.:
-  - EXPECTED INPUT: "Apples"
-  - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
-  - EXPECTED OUTPUT: 3.
-
-* Tell the user with in a formatted sentence how many times their keyword has occurred in their sentence.
-  - EXPECTED INPUT: "Apples"
-  - EXPECTED INPUT: "Apples are a tasty fruit."
-  - EXPECTED OUTPUT: "Apples occurred 1 time(s) in the sentence you provided."
-
-* Create a RepeatCounter Object model with a name. Simply test the object comes into existence. IsNotNull(Object) = true.
+* Create a RepeatCounter Object model with a name and parameters. Simply test the object comes into existence. IsNotNull(Object) = true.
   - NO INPUT OR OUTPUT
 
-* Add Getters, and Setters as needed. Test them by getting and setting vars and passing them back and forth.
-  - NO INPUT OR OUTPUT
+* Add Getter for Keyword.
+- EXPECTED INPUT: "Test"
+- EXPECTED INPUT VIA OBJECT CONSTRUCTOR: "Test", "A Test Sentence."
+- EXPECTED OUTPUT: None.
 
-* Add to the Object's Constructor so that the User enters a keyword when building the object. If the string is not empty, they have given a keyword.
-  - EXPECTED SAMPLE INPUT: "Apples"
+* Add Setter for Keyword.
+- EXPECTED INPUT VIA OBJECT CONSTRUCTOR: "Test", "A Test Sentence."
+- EXPECTED INPUT: "Banana"
+- EXPECTED OUTPUT: None.
 
-* Add to the Object's Constructor so that the User enters a keyword when building the object. If the string is not empty, they have given a string.
-  - EXPECTED SAMPLE INPUT: "Apples are a tasty fruit."
+* Add Getter for Sentence.
+- EXPECTED INPUT: "A Test Sentence.
+- EXPECTED INPUT VIA OBJECT CONSTRUCTOR: "Test", "A Test Sentence."
+- EXPECTED OUTPUT: None.
 
-* Add a method to strip punctuation from a given sentence and return it in UPPERCASE.
+* Add Setter for Sentence.
+- EXPECTED INPUT VIA OBJECT CONSTRUCTOR: "Test", "A Test Sentence."
+- EXPECTED INPUT: "A Different Sentence."
+- EXPECTED OUTPUT: None.
+
+* Add a method to strip punctuation from a given sentence turning it into spaces.
   - EXPECTED SAMPLE INPUT: "Apples, I say, are a tasty fruit."
-  - EXPECTED SAMPLE RETURN: "APPLES I SAY ARE A TASTY FRUIT"
+  - EXPECTED SAMPLE RETURN: "Apples, I say, are a tasty fruit"
 
-* Add the Method that counts the occurrences of the keyword in the sentence (based on the REPL logic) and returns the number of occurrences.
+* Add a Method that given a keyword and a sentence, turns the sentence to uppercase, splits at spaces, and counts the occurrences of the keyword in the sentence returning the count.
   - EXPECTED INPUT: "Apples"
   - EXPECTED INPUT: "Apples, I hear, are a tasty fruit. Apples are like any fruit. I like apples."
   - EXPECTED OUTPUT: 3.
@@ -137,7 +91,7 @@ Do not use regular expressions in your logic.
 
 * Style the Index page.
 
-* Refactor code as needed. 
+* Refactor code as needed.
 
 ## Methodology
 

@@ -38,7 +38,7 @@ namespace WordCounter.Tests
             var result = indexView.ViewData.Model;
 
             //Assert
-            Assert.IsInstanceOfType(result, typeof(String)); // this is the message passed to the screen as a dictionary.
+            Assert.IsInstanceOfType(result, typeof(String)); // this is the message passed to the screen as a string.
 
             // Assert.IsInstanceOfType(result, typeof(Dictionary<string, object>)); // this is the message passed to the screen as a dictionary.
         }

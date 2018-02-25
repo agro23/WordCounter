@@ -34,14 +34,31 @@ namespace WordCounter.Models
       _sentence = sentence;
     }
 
-    public static string ValidateSentence(string sentence)
+    // public static string StripPunctuationFromSentence(string sentence)
+    // {
+    //   StringBuilder newString = new StringBuilder();
+    //   for (var i = 0; i < sentence.Length; i++)
+    //   {
+    //     if(! char.IsPunctuation(sentence[i]))
+    //     {
+    //     newString.Append(sentence[i]);
+    //     }
+    //   }
+    //   return newString.ToString();
+    // }
+
+    public static string StripPunctuationFromSentence(string sentence)
     {
       StringBuilder newString = new StringBuilder();
       for (var i = 0; i < sentence.Length; i++)
       {
-        if(! char.IsPunctuation(sentence[i]))
-        {
-        newString.Append(sentence[i]);
+          if(char.IsPunctuation(sentence[i]))
+          {
+          newString.Append(' ');
+          }
+          else
+          {
+          newString.Append(sentence[i]);
         }
       }
       return newString.ToString();
@@ -49,8 +66,8 @@ namespace WordCounter.Models
 
     public static int Counter(string keyword, string sentence)
     {
-      sentence = ValidateSentence(sentence);
-      string [] words = sentence.Split(' ');
+      string newSentence = StripPunctuationFromSentence(sentence);
+      string [] words = newSentence.Split(' ');
       int repeatCount = 0;
       for (var i=0; i < words.Length; i++)
       {
