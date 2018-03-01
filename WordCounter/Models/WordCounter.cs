@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
@@ -54,14 +55,18 @@ namespace WordCounter.Models
       {
           if(char.IsPunctuation(sentence[i]))
           {
-          newString.Append(' ');
+              newString.Append(' ');
           }
           else
           {
-          newString.Append(sentence[i]);
+              newString.Append(sentence[i]);
         }
       }
-      return newString.ToString();
+      string x = newString.ToString();
+      Regex rgx = new Regex("\\s+");
+      x = rgx.Replace(x, " "); // remove all extra spaces
+
+      return x.Trim();
     }
 
     public static int Counter(string keyword, string sentence)
